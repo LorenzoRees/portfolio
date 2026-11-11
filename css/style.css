@@ -1,0 +1,198 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #282828;
+    --background-color: #626262;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+header, footer {
+    background-color: var(--secondary-color);
+    padding: 12px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 5px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+header p, footer p {
+    margin: 0;
+}
+
+header p {
+    font-size: 14px;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+ul, ol {
+    width: fit-content;
+    max-width: 100%;
+    margin: 15px auto;
+    padding-left: 20px;
+    text-align: left;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+video {
+    display: block;
+    margin: 20px auto;
+}
+
+/* Herbruikbare classes. */
+.kaart {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin: 0 0 15px;
+}
+
+.profielfoto {
+    width: 197px;
+    margin-bottom: 15px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Goed leesbare links en genoeg ruimte om te tikken. */
+a {
+    color: var(--primary-color);
+    text-underline-offset: 3px;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px solid var(--background-color);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.projectkaart a, .teruglink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 4px;
+}
+
+.projectkaarten {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.projectkaart {
+    flex: 0 1 240px;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #626262;
+    margin: 0;
+}
+
+/* Alleen de tekst in Over mij. */
+#over-mij p {
+    max-width: 650px;
+    margin: 16px auto;
+}
+
+/* Op kleine schermen staan de kaarten en de navigatie onder elkaar. */
+@media (max-width: 768px) {
+    header, footer {
+        padding: 16px 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .kaart {
+        padding: 16px;
+        margin: 16px 0;
+    }
+
+    .highlight {
+        font-size: 22px;
+    }
+
+    .projectkaarten {
+        flex-direction: column;
+    }
+
+    .projectkaart {
+        /* De desktopbreedte van 240px mag geen vaste hoogte worden. */
+        flex: 0 1 auto;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .projectkaart h3 {
+        margin-top: 0;
+    }
+}
